@@ -54,8 +54,10 @@ LABEL org.opencontainers.image.title="Profilarr"
 LABEL org.opencontainers.image.description="Profilarr - Profile manager for *arr apps"
 LABEL org.opencontainers.image.source="https://github.com/vidurb/profilarr"
 
+RUN chown -R nobody:nogroup /config
 # Switch to non-root user
 USER nobody:nogroup
+
 
 VOLUME ["/config"]
 EXPOSE 6868
