@@ -3,14 +3,12 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
+            target: production
         container_name: profilarr
         ports:
             - 6870:6868
         volumes:
             - ./config-test:/config
         environment:
-            - PUID=1000
-            - PGID=1000
-            - UMASK=002
             - TZ=Australia/Adelaide
         restart: unless-stopped
