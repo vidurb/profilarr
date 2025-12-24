@@ -7,8 +7,6 @@ services:
         container_name: profilarr
         ports:
             - 6870:6868
-        volumes:
-            - ./config-test:/config
         environment:
             - TZ=Australia/Adelaide
         restart: unless-stopped

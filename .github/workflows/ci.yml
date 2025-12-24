@@ -18,7 +18,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Build and Start Production Container
-              run: mkdir config-test; chown -R nobody:nogroup config-test; docker compose -f docker-compose.prod.yml up -d --build
+              run: docker compose -f docker-compose.prod.yml up -d --build
 
             - name: Wait for container to be ready
               run: |
